@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="WiiRemoteJ">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/Downloads/WiiRemoteJ-master/WiiRemoteJ-master/WiiRemoteJ.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
