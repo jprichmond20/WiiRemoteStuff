@@ -1,6 +1,8 @@
 import java.util.ArrayList;
 import java.awt.*;
 import javax.swing.*;
+
+import com.intel.bluetooth.BlueCoveConfigProperties;
 import wiiremotej.*;
 import wiiremotej.event.*;
 import javax.sound.sampled.*;
@@ -120,10 +122,13 @@ public class WiiRemoteTesting extends WiiRemoteAdapter
 
             //Find and connect to a Wii Remote
             WiiRemote remote = null;
-
+            System.setProperty(BlueCoveConfigProperties.PROPERTY_JSR_82_PSM_MINIMUM_OFF,
+                    "true");
+            //System.setProperty("bluecove.stack", "widcomm");
+            //System.setProperty(BlueCoveConfigProperties.PROPERTY_STACK, "widcomm");
             while (remote == null) {
                 try {
-                    remote = WiiRemoteJ.findRemote();
+                    remote = WiiRemoteJ.connectToRemote("A45C2796750D");
                 }
                 catch(Exception e) {
                     remote = null;
